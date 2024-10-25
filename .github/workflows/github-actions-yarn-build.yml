@@ -3,6 +3,7 @@ run-name: Build Check
 on:
   pull_request:
     branches:
+      - main
       - develop
       - 'feature/*'
     # 処理が走るタイミングはプルリク作成時、追加のコミットPush、閉じたプルリクの再開

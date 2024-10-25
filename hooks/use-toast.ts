@@ -190,5 +190,11 @@ function useToast() {
     dismiss: (toastId?: string) => dispatch({ type: "DISMISS_TOAST", toastId }),
   }
 }
-
+// 追記
+type VariantType = "success" | "warning" | "destructive" | "default" | null | undefined;
+export const VARIANT_TYPE: { [key: string]: VariantType } = {
+  success: "success",
+  warning: "warning",
+  destructive: "destructive"
+};
 export { useToast, toast }

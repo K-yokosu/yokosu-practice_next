@@ -42,4 +42,16 @@ const Toggle = React.forwardRef<
 
 Toggle.displayName = TogglePrimitive.Root.displayName
 
+// 追記
+export type ToggleVariantType = "default" | "outline" | null | undefined;
+export type ToggleSizeVariantType = "default" | "sm" | "lg" | null | undefined;
+export const TOGGLE_VARIANT_TYPE: { [key: string]: ToggleVariantType } = {
+  default: "default",
+  outline: "outline",
+};
+export const TOGGLE_SIZE_VARIANT_TYPE: { [key: string]: ToggleSizeVariantType } = {
+  default: "default",
+  sm: "sm",
+  lg: "lg",
+};
 export { Toggle, toggleVariants }

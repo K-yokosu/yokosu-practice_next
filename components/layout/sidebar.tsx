@@ -34,6 +34,8 @@ import {
   PATH_OTHER_NO_PARALLEL,
   PATH_OTHER_INTERCEPT,
   PATH_OTHER_NO_INTERCEPT,
+  PATH_SAMPLE,
+  PATH_SAMPLE_DND,
  } from "@/lib/paths";
 // 画像
 import { ChevronDown } from "lucide-react"
@@ -55,6 +57,7 @@ type SideMenuStructsType = {
   // crud: SideMenuStructType;
   shadcn: SideMenuStructType;
   // other: SideMenuStructType;
+  sample: SideMenuStructType;
 };
 
 const URL_FIRST_LAYER: number = 1;
@@ -94,7 +97,12 @@ export const OTHER_PATH: string[] = [
   PATH_OTHER_NO_PARALLEL,
   PATH_OTHER_INTERCEPT,
   PATH_OTHER_NO_INTERCEPT,
-].map(path => path.split("/")[URL_SECOND_LAYER]);;
+].map(path => path.split("/")[URL_SECOND_LAYER]);
+
+export const SAMPLE_PATH: string[] = [
+  PATH_SAMPLE,
+  PATH_SAMPLE_DND,
+].map(path => path.split("/")[URL_SECOND_LAYER]);
 /**
  * サイドバー情報
  */
@@ -160,6 +168,15 @@ const SIDE_MENU_STRUCTS: SideMenuStructsType = {
   //     {path: PATH_OTHER_NO_INTERCEPT,label: "no_intercept"},
   //   ]
   // }
+  sample: {
+    path: PATH_SAMPLE,
+    label: "sample",
+    activeImage: <ChevronDown width={16} height={15} />,
+    inactiveImage: <ChevronDown width={16} height={15} />,
+    pages: [
+      {path: PATH_SAMPLE_DND,label: "Drag and Drop"},
+    ]
+  },
 };
 
 export const Sidebar = () => {
@@ -225,6 +242,9 @@ export const Sidebar = () => {
     // else if (OTHER_PATH.includes(tmpPath)) {
     //   setSidebarMenu({ firstMenu: SIDE_MENU_STRUCTS.other.path, secondMenu: tmpPath });
     // } 
+    else if (SAMPLE_PATH.includes(tmpPath)) {
+        setSidebarMenu({ firstMenu: SIDE_MENU_STRUCTS.sample.path, secondMenu: tmpPath });
+      } 
     else if (PATH_DASHBOARD === path){
       setSidebarMenu({ firstMenu: SIDE_MENU_STRUCTS.dashboard.path, secondMenu: "" });
     } else {
@@ -291,6 +311,17 @@ export const Sidebar = () => {
             //   ),
             //   content: () => SIDE_MENU_STRUCTS.other.pages && accordionContent(SIDE_MENU_STRUCTS.other.pages)
             // },
+            {
+              value: SIDE_MENU_STRUCTS.sample.path,
+              children: accordionTriger(
+                SIDE_MENU_STRUCTS.sample.path,
+                SIDE_MENU_STRUCTS.sample.label,
+                true,
+                SIDE_MENU_STRUCTS.sample.activeImage,
+                SIDE_MENU_STRUCTS.sample.inactiveImage
+              ),
+              content: () => SIDE_MENU_STRUCTS.sample.pages && accordionContent(SIDE_MENU_STRUCTS.sample.pages)
+            },
           ]}
         />
     </div>

@@ -1,31 +1,42 @@
 "use client";
 
+// library
+import React from "react";
+// component
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 import { Separator } from "@/components/ui/separator"
 
 export default function Page() {
   return (
-    <>
-      <div className="mb-8">
-        <h2 className="text-xl mt-4">Slider</h2>
-
-        <div>
-          <div className="space-y-1">
-            <h4 className="text-sm font-medium leading-none">Radix Primitives</h4>
-            <p className="text-sm text-muted-foreground">
-              An open-source UI component library.
-            </p>
-          </div>
-          <Separator className="my-4" />
-          <div className="flex h-5 items-center space-x-4 text-sm">
-            <div>Blog</div>
-            <Separator orientation="vertical" />
-            <div>Docs</div>
-            <Separator orientation="vertical" />
-            <div>Source</div>
-          </div>
-        </div>
-        <p className="mt-5">縦横にできるのがありがたい</p>
+    <div className="">
+      <div className="my-8">
+        <h2 className="font-bold text-lg">役割</h2>
+        <p className="text-sm">境界線</p>
+        <h2 className="font-bold text-lg mt-2">用途</h2>
+        <p className="text-sm"></p>
       </div>
-    </>
-  )
+      <Table className="table-auto w-full border-2 border-gray-300">
+        <TableHeader>
+          <TableRow className="bg-gray-100">
+            <TableHead className="w-1/5">- / 関連自作component</TableHead>
+            <TableHead className="w-2/5">
+              Props
+            </TableHead>
+            <TableHead className="w-2/5">例</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow className="">
+            <TableCell className="">Separator</TableCell>
+            <TableCell className="">
+              -
+            </TableCell>
+            <TableCell className="">
+              <Separator className="my-4" />
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </div>
+  );
 }

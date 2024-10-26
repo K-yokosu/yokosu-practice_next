@@ -1,16 +1,42 @@
 "use client";
 
+// library
+import React from "react";
+// component
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 import { SliderComponent } from "@/components/shadcn_components/slider";
 
 export default function Page() {
   return (
-    <>
-      <div className="mb-8">
-        <h2 className="text-xl mt-4">Slider</h2>
-
-        <SliderComponent />
-        <p className="mt-5">共通化不要。Tooltipで組み合わせるのが良いかな</p>
+    <div className="">
+      <div className="my-8">
+        <h2 className="font-bold text-lg">役割</h2>
+        <p className="text-sm">ステータスや進捗を表現する</p>
+        <h2 className="font-bold text-lg mt-2">用途</h2>
+        <p className="text-sm">問題の進捗や技術レベルの段階分けなど</p>
       </div>
-    </>
-  )
+      <Table className="table-auto w-full border-2 border-gray-300">
+        <TableHeader>
+          <TableRow className="bg-gray-100">
+            <TableHead className="w-1/5">- / 関連自作component</TableHead>
+            <TableHead className="w-2/5">
+              Props
+            </TableHead>
+            <TableHead className="w-2/5">例</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow className="">
+            <TableCell className="">SliderComponent</TableCell>
+            <TableCell className="">
+              -
+            </TableCell>
+            <TableCell className="">
+              <SliderComponent />
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </div>
+  );
 }

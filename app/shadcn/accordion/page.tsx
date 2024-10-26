@@ -1,6 +1,12 @@
+"use client";
+
+// library
+import React from "react";
+import { ChevronDown } from "lucide-react"
+// component
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 import { SingleAccordion } from "@/components/shadcn_components/single_accordion"
 import { MultipleAccordion, AccordionType } from "@/components/shadcn_components/multiple_accordion"
-import { ChevronDown } from "lucide-react"
 
 export default function Page() {
   const accordionContent: React.ReactNode = (
@@ -21,25 +27,58 @@ export default function Page() {
     {children: accorionTriger, content: () => accordionContent, value: "accordion2"},
     {children: accorionTriger, content: () => accordionContent, value: "accordion3"},
   ]
-  
   return (
-    <>
-      <div className="mb-8">
-        <h2 className="text-xl mt-4">Single Accordion</h2>
-        <SingleAccordion
-          isOpen={false}
-          content={() => accordionContent}
-        >
-          {accorionTriger}
-        </SingleAccordion>
-
-        <h2 className="text-xl mt-4">Multiple Accordion</h2>
-        <MultipleAccordion
-          items={multipleAccordionItems}
-          defautValue={"accordion2"}
-        />
+    <div className="">
+      <div className="my-8">
+        <h2 className="font-bold text-lg">役割</h2>
+        <p className="text-sm">メニューやコンテンツを折りたたみ使用感をよくする</p>
+        <h2 className="font-bold text-lg mt-2">用途</h2>
+        <p className="text-sm">サイドバーや長ったらしいコンテンツを折りたたむ</p>
+        <h2 className="font-bold text-lg mt-2">使用法</h2>
+        <ul className="text-sm mt-5">
+          <li>トリガーのiconを除去したい場合は、components/ui/accordion.tsx AccordionTrigger内のChevronDownを削除する</li>
+          <li>iconの有無が混在する場合はトリガーノードにiconを加える</li>
+        </ul>
       </div>
-      <p className="text-sm">※ もしトリガーのiconを除去したければ components/ui/accordion.tsx AccordionTrigger内のChevronDownを削除すること。iconの有無が混在する場合はトリガーノードにiconを加える</p>
-    </>
-  )
+      <Table className="table-auto w-full border-2 border-gray-300">
+        <TableHeader>
+          <TableRow className="bg-gray-100">
+            <TableHead className="w-1/5">- / 関連自作component</TableHead>
+            <TableHead className="w-2/5">
+              Props
+            </TableHead>
+            <TableHead className="w-2/5">例</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow className="">
+            <TableCell className="">SingleAccordion</TableCell>
+            <TableCell className="">
+              -
+            </TableCell>
+            <TableCell className="">
+              <SingleAccordion
+                isOpen={false}
+                content={() => accordionContent}
+              >
+                {accorionTriger}
+              </SingleAccordion>
+            </TableCell>
+          </TableRow>
+          <TableRow className="">
+            <TableCell className="">MultipleAccordion</TableCell>
+            <TableCell className="">
+              -
+            </TableCell>
+            <TableCell className="">
+              <MultipleAccordion
+                items={multipleAccordionItems}
+                defautValue={"accordion2"}
+              />
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </div>
+  );
 }

@@ -21,7 +21,6 @@ import {
   PATH_SHADCN_SWITCH,
   PATH_SHADCN_SHEET,
   PATH_SHADCN_TOAST,
-  PATH_SHADCN_FORM,
   PATH_SHADCN_SLIDER,
   PATH_SHADCN_SCROLL,
   PATH_SHADCN_NAVI,
@@ -36,6 +35,7 @@ import {
   PATH_OTHER_NO_INTERCEPT,
   PATH_SAMPLE,
   PATH_SAMPLE_DND,
+  PATH_SAMPLE_FORM,
  } from "@/lib/paths";
 // 画像
 import { ChevronDown } from "lucide-react"
@@ -82,7 +82,6 @@ export const SHADCN_PATH: string[] = [
   PATH_SHADCN_TABLE,
   PATH_SHADCN_SHEET,
   PATH_SHADCN_TOAST,
-  PATH_SHADCN_FORM,
   PATH_SHADCN_SLIDER,
   PATH_SHADCN_SCROLL,
   PATH_SHADCN_NAVI,
@@ -102,6 +101,7 @@ export const OTHER_PATH: string[] = [
 export const SAMPLE_PATH: string[] = [
   PATH_SAMPLE,
   PATH_SAMPLE_DND,
+  PATH_SAMPLE_FORM,
 ].map(path => path.split("/")[URL_SECOND_LAYER]);
 /**
  * サイドバー情報
@@ -140,20 +140,19 @@ const SIDE_MENU_STRUCTS: SideMenuStructsType = {
     inactiveImage: <ChevronDown width={16} height={15} />,
     pages: [
       {path: PATH_SHADCN_ACCORDION,label: "Accordion"},
-      {path: PATH_SHADCN_SWITCH,label: "Switch"},
-      {path: PATH_SHADCN_TOGGLE,label: "Toggle"},
-      {path: PATH_SHADCN_TOOTLIP,label: "Tooltip"},
-      {path: PATH_SHADCN_TABLE,label: "Table"},
-      {path: PATH_SHADCN_SHEET, label: "Sheet"},
-      {path: PATH_SHADCN_TOAST,label: "Toast"},
-      {path: PATH_SHADCN_FORM, label: "Form"},
-      {path: PATH_SHADCN_SLIDER,label: "Slider"},
-      {path: PATH_SHADCN_SCROLL,label: "Scroll"},
       {path: PATH_SHADCN_NAVI,label: "Navigation Menu"},
-      {path: PATH_SHADCN_SONNER,label: "Sonner"},
-      {path: PATH_SHADCN_TABS, label: "Tabs"},
-      {path: PATH_SHADCN_SKELTON,label: "Skelton"},
+      {path: PATH_SHADCN_SCROLL,label: "Scroll"},
       {path: PATH_SHADCN_SEPARATOR,label: "Separator"},
+      {path: PATH_SHADCN_SHEET, label: "Sheet"},
+      {path: PATH_SHADCN_SKELTON,label: "Skelton"},
+      {path: PATH_SHADCN_SLIDER,label: "Slider"},
+      {path: PATH_SHADCN_SONNER,label: "Sonner"},
+      {path: PATH_SHADCN_SWITCH,label: "Switch"},
+      {path: PATH_SHADCN_TABLE,label: "Table"},
+      {path: PATH_SHADCN_TABS, label: "Tabs"},
+      {path: PATH_SHADCN_TOAST,label: "Toast"},
+      {path: PATH_SHADCN_TOGGLE,label: "Toggle"},
+      {path: PATH_SHADCN_TOOTLIP,label: "Tooltip"}, 
     ]
   },
   // other: {
@@ -175,6 +174,7 @@ const SIDE_MENU_STRUCTS: SideMenuStructsType = {
     inactiveImage: <ChevronDown width={16} height={15} />,
     pages: [
       {path: PATH_SAMPLE_DND,label: "Drag and Drop"},
+      {path: PATH_SAMPLE_FORM,label: "Hook-Form"},
     ]
   },
 };

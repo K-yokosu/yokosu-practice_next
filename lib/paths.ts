@@ -46,6 +46,7 @@ export const PATH_OTHER_NO_INTERCEPT: Path = `${PATH_OTHER}/intercept_route/no_i
 export const PATH_SAMPLE: Path = "/sample";
 export const PATH_SAMPLE_DND: Path = `${PATH_SAMPLE}/dnd`;
 export const PATH_SAMPLE_FORM: Path = `${PATH_SAMPLE}/hook_form`;
+export const PATH_SAMPLE_ROUTECACHE: Path = `${PATH_SAMPLE}/route_cache`;
 // export const PATH_SAMPLE_CREATE2: Path = `${PATH_SAMPLE}/create_second`;
 // export const PATH_SAMPLE_EDIT: Path = `${PATH_SAMPLE}/%s/edit`;
 // export const PATH_SAMPLE_DETAIL: Path = `${PATH_SAMPLE}/%s`;

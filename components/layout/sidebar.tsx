@@ -36,6 +36,7 @@ import {
   PATH_SAMPLE,
   PATH_SAMPLE_DND,
   PATH_SAMPLE_FORM,
+  PATH_SAMPLE_ROUTECACHE,
  } from "@/lib/paths";
 // 画像
 import { ChevronDown } from "lucide-react"
@@ -102,6 +103,7 @@ export const SAMPLE_PATH: string[] = [
   PATH_SAMPLE,
   PATH_SAMPLE_DND,
   PATH_SAMPLE_FORM,
+  PATH_SAMPLE_ROUTECACHE,
 ].map(path => path.split("/")[URL_SECOND_LAYER]);
 /**
  * サイドバー情報
@@ -175,6 +177,7 @@ const SIDE_MENU_STRUCTS: SideMenuStructsType = {
     pages: [
       {path: PATH_SAMPLE_DND,label: "Drag and Drop"},
       {path: PATH_SAMPLE_FORM,label: "Hook-Form"},
+      {path: PATH_SAMPLE_ROUTECACHE,label: "Route Cache"},
     ]
   },
 };

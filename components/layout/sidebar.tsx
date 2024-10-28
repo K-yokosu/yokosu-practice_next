@@ -28,6 +28,8 @@ import {
   PATH_SHADCN_TABS,
   PATH_SHADCN_SKELTON,
   PATH_SHADCN_SEPARATOR,
+  PATH_SHADCN_RESIZABLE,
+  PATH_SHADCN_PROGRESS,
   PATH_OTHER,
   PATH_OTHER_PARALLEL,
   PATH_OTHER_NO_PARALLEL,
@@ -90,6 +92,8 @@ export const SHADCN_PATH: string[] = [
   PATH_SHADCN_TABS,
   PATH_SHADCN_SKELTON,
   PATH_SHADCN_SEPARATOR,
+  PATH_SHADCN_RESIZABLE,
+  PATH_SHADCN_PROGRESS,
 ].map(path => path.split("/")[URL_SECOND_LAYER]);;
 
 export const OTHER_PATH: string[] = [
@@ -143,6 +147,8 @@ const SIDE_MENU_STRUCTS: SideMenuStructsType = {
     pages: [
       {path: PATH_SHADCN_ACCORDION,label: "Accordion"},
       {path: PATH_SHADCN_NAVI,label: "Navigation Menu"},
+      {path: PATH_SHADCN_PROGRESS,label: "Progress"},
+      {path: PATH_SHADCN_RESIZABLE,label: "Resizable"},
       {path: PATH_SHADCN_SCROLL,label: "Scroll"},
       {path: PATH_SHADCN_SEPARATOR,label: "Separator"},
       {path: PATH_SHADCN_SHEET, label: "Sheet"},

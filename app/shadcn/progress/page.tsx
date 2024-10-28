@@ -4,16 +4,16 @@
 import React from "react";
 // component
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
-import { Separator } from "@/components/ui/separator"
+import { ProgressComponent } from "@/components/shadcn_components/progress";
 
 export default function Page() {
   return (
     <div className="">
       <div className="my-8">
         <h2 className="font-bold text-lg">役割</h2>
-        <p className="text-sm">境界線</p>
+        <p className="text-sm">タスクの完了の進行状況を示すインジケーターを表示</p>
         <h2 className="font-bold text-lg mt-2">用途</h2>
-        <p className="text-sm"></p>
+        <p className="text-sm">ローディングとタイムリミット、進捗、etc...</p>
       </div>
       <Table className="table-auto w-full border-2 border-gray-300">
         <TableHeader>
@@ -27,12 +27,12 @@ export default function Page() {
         </TableHeader>
         <TableBody>
           <TableRow className="">
-            <TableCell className="">Separator</TableCell>
+            <TableCell className="">ProgressComponent</TableCell>
             <TableCell className="">
               -
             </TableCell>
             <TableCell className="">
-              <Separator className="my-4" />
+              <ProgressComponent />
             </TableCell>
           </TableRow>
         </TableBody>

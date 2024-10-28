@@ -18,8 +18,10 @@ export const PATH_SEGMENT: Path = `${PATH_ROOT}segment`;
 export const PATH_SEGMENT_LOAD: Path = `${PATH_SEGMENT}/loading`;
 export const PATH_SEGMENT_NOTFOUND: Path = `${PATH_SEGMENT}/not-found`;
 export const PATH_SEGMENT_ROUTE: Path = `${PATH_SEGMENT}/route`;
+
 export const PATH_CRUD: Path = `${PATH_ROOT}crud`;
 export const PATH_CRUD_FETCH: Path = `${PATH_CRUD}/fetch`;
+
 export const PATH_SHADCN: Path = `${PATH_ROOT}shadcn`;
 export const PATH_SHADCN_ACCORDION: Path = `${PATH_SHADCN}/accordion`;
 export const PATH_SHADCN_TOGGLE: Path = `${PATH_SHADCN}/toggle`;
@@ -36,6 +38,9 @@ export const PATH_SHADCN_TABS: Path = `${PATH_SHADCN}/tabs`;
 export const PATH_SHADCN_SKELTON: Path = `${PATH_SHADCN}/skelton`;
 export const PATH_SHADCN_SEPARATOR: Path = `${PATH_SHADCN}/separator`;
 export const PATH_SHADCN_SELECT: Path = `${PATH_SHADCN}/select`;
+export const PATH_SHADCN_RESIZABLE: Path = `${PATH_SHADCN}/resizable`;
+export const PATH_SHADCN_PROGRESS: Path = `${PATH_SHADCN}/progress`;
+
 export const PATH_OTHER: Path = `${PATH_ROOT}other`;
 export const PATH_OTHER_PARALLEL: Path = `${PATH_OTHER}/parallel_route/sample`;
 export const PATH_OTHER_NO_PARALLEL: Path = `${PATH_OTHER}/parallel_route/no_parallel`;

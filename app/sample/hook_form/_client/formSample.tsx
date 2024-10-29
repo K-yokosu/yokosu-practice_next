@@ -7,20 +7,18 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 // component
-// import { DisableOption } from "@/components/form/calendar_picker";
+import { DisableOption } from "@/components/shadcn_components/form/calendar_picker";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
-// import { FormInput } from "@/components/hook_form/form_input";
-// import { FormCombobox } from "@/components/hook_form/form_combobox";
+import { FormInput } from "@/components/shadcn_components/hook-form/form_input";
+import { FormCombobox } from "@/components/shadcn_components/hook-form/form_combobox";
 import { FormSelect } from "@/components/shadcn_components/hook-form/form_select";
-// import { FormCheckbox } from "@/components/hook_form/form_checkbox";
-// import { FormCheckboxes } from "@/components/hook_form/form_checkboxes";
-// import { FormRadioGroup } from "@/components/hook_form/form_radio_group";
+import { FormCheckbox } from "@/components/shadcn_components/hook-form/form_checkbox";
+import { FormCheckboxes } from "@/components/shadcn_components/hook-form/form_checkboxes";
+import { FormRadioGroup } from "@/components/shadcn_components/hook-form/form_radio_group";
 import { FormTextarea } from "@/components/shadcn_components/hook-form/textare";
-// import { FormDatePicker } from "@/components/hook_form/form_date_picker";
+import { FormDatePicker } from "@/components/shadcn_components/hook-form/form_date_picker";
 // other
-// import { frameworks, fruits, judgements, MAX_STR_LENGTH } from "@/app/sample/_content/const";
-// import useSampleCreate from "@/hooks/request/sample/useSampleCreate";
 import { OptionsType } from "@/components/shadcn_components/form/combobox_with_clear";
 
 export const MAX_STR_LENGTH: number = 30;
@@ -53,7 +51,7 @@ export const INIT_VALUES = {
       name: "",
       language: 0,
       second_language: 0,
-      // check: false,
+      check: false,
       options: [],
       judgeo: null,
       description: "",
@@ -72,7 +70,7 @@ export const sampleFormSchema = z.object({
       second_language: z.number().positive({
         message: "選択してください"
       }),
-      // check: z.boolean().default(false).optional(),
+      check: z.boolean().default(false).optional(),
       options: z.array(z.number()).refine(value => value.some(item => item), {
         message: "You have to select at least one item."
       }),
@@ -108,13 +106,13 @@ export default function FormSample() {
         //   }
         // };
         // mutate(formData);
-      };
+    };
 
   return (
     <div className="bg-white p-4">
       <Form {...form}>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-          {/* <FormInput
+          <FormInput
             control={control}
             name={"sample.name"}
             placeholder={"入力してください"}
@@ -123,9 +121,9 @@ export default function FormSample() {
             description={"サンプル inputです"}
             inputCss={"w-1/3"}
             disabled={false}
-          /> */}
+          />
 
-          {/* <FormCombobox
+          <FormCombobox
             control={control}
             name={"sample.language"}
             placeholder={"選択してください"}
@@ -137,7 +135,7 @@ export default function FormSample() {
             closeBtnCss=""
             closeIconCss=""
             disabled={false}
-          /> */}
+          />
 
           <FormSelect
             control={control}
@@ -153,22 +151,21 @@ export default function FormSample() {
             disabled={false}
           />
 
-          {/* カラムないためコメント */}
-          {/* <FormCheckbox
+          <FormCheckbox
             control={control}
-            name={"check"}
+            name={"sample.check"}
             // 以下省略可(実コードではこのコメント不要)
             label={"サンプル check"}
             description={"サンプル checkです"}
             checkFieldCss="w-1/3"
             checkCss="w-8 h-8"
             disabled={false}
-          /> */}
+          />
 
-          {/* <FormCheckboxes
+          <FormCheckboxes
             control={control}
             name={"sample.options"}
-            options={fruits}
+            options={frameworks}
             // 以下省略可(実コードではこのコメント不要)
             label={"options"}
             description={"サンプル checksです"}
@@ -180,14 +177,14 @@ export default function FormSample() {
           <FormRadioGroup
             control={control}
             name={"sample.judge"}
-            options={judgements}
+            options={frameworks}
             // 以下省略可(実コードではこのコメント不要)
             label={"judge"}
             description={"サンプル radioです"}
             radioFieldCss="w-full bg-gray-50 p-4"
             radioGroupCss="flex-row space-x-2"
             disabled={false}
-          /> */}
+          />
 
           <FormTextarea
             control={control}
@@ -203,7 +200,7 @@ export default function FormSample() {
             isHideStrLength={false}
           />
 
-          {/* <FormDatePicker
+          <FormDatePicker
             control={control}
             name={"sample.date"}
             placeholder={"日付選択"}
@@ -215,7 +212,7 @@ export default function FormSample() {
             disabledOption={DisableOption.selectDateDisablePast}
             specifiedDate={format(addDays(new Date(), 2), "yyyy/MM/dd")}
             disabled={false}
-          /> */}
+          />
 
           <Button type="submit">
             Submit

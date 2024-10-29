@@ -40,6 +40,12 @@ export const PATH_SHADCN_SEPARATOR: Path = `${PATH_SHADCN}/separator`;
 export const PATH_SHADCN_SELECT: Path = `${PATH_SHADCN}/select`;
 export const PATH_SHADCN_RESIZABLE: Path = `${PATH_SHADCN}/resizable`;
 export const PATH_SHADCN_PROGRESS: Path = `${PATH_SHADCN}/progress`;
+export const PATH_SHADCN_POPOVER: Path = `${PATH_SHADCN}/popover`;
+export const PATH_SHADCN_PAGINATION: Path = `${PATH_SHADCN}/pagination`;
+export const PATH_SHADCN_LABEL: Path = `${PATH_SHADCN}/label`;
+export const PATH_SHADCN_INPUT: Path = `${PATH_SHADCN}/input`;
+export const PATH_SHADCN_INPUT_OTP: Path = `${PATH_SHADCN}/input_otp`;
+export const PATH_SHADCN_RADIO: Path = `${PATH_SHADCN}/radio`;
 
 export const PATH_OTHER: Path = `${PATH_ROOT}other`;
 export const PATH_OTHER_PARALLEL: Path = `${PATH_OTHER}/parallel_route/sample`;

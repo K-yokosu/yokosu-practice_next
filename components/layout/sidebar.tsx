@@ -45,6 +45,11 @@ import {
   PATH_SAMPLE_DND,
   PATH_SAMPLE_FORM,
   PATH_SAMPLE_ROUTECACHE,
+  PATH_SHADCN_ALERT,
+  PATH_SHADCN_ALERT_DIALOG,
+  PATH_SHADCN_BADGE,
+  PATH_SHADCN_ASPECT,
+  PATH_SHADCN_AVATAR,
  } from "@/lib/paths";
 // 画像
 import { ChevronDown } from "lucide-react"
@@ -106,6 +111,11 @@ export const SHADCN_PATH: string[] = [
   PATH_SHADCN_INPUT,
   PATH_SHADCN_INPUT_OTP,
   PATH_SHADCN_RADIO,
+  PATH_SHADCN_ALERT,
+  PATH_SHADCN_ALERT_DIALOG,
+  PATH_SHADCN_BADGE,
+  PATH_SHADCN_ASPECT,
+  PATH_SHADCN_AVATAR,
 ].map(path => path.split("/")[URL_SECOND_LAYER]);;
 
 export const OTHER_PATH: string[] = [
@@ -158,6 +168,11 @@ const SIDE_MENU_STRUCTS: SideMenuStructsType = {
     inactiveImage: <ChevronDown width={16} height={15} />,
     pages: [
       {path: PATH_SHADCN_ACCORDION,label: "Accordion"},
+      {path: PATH_SHADCN_ALERT,label: "ALERT"},
+      {path: PATH_SHADCN_ALERT_DIALOG,label: "ALERT_DIALOG"},
+      {path: PATH_SHADCN_AVATAR,label: "AVATAR"},
+      {path: PATH_SHADCN_ASPECT,label: "ASPECT"},
+      {path: PATH_SHADCN_BADGE,label: "BADGE"},
       {path: PATH_SHADCN_INPUT,label: "Input"},
       {path: PATH_SHADCN_INPUT_OTP,label: "Input OTP"},
       {path: PATH_SHADCN_LABEL,label: "Label"},

@@ -51,6 +51,11 @@ export const PATH_SHADCN_ALERT_DIALOG: Path = `${PATH_SHADCN}/alert_dialog`;
 export const PATH_SHADCN_ASPECT: Path = `${PATH_SHADCN}/aspect`;
 export const PATH_SHADCN_AVATAR: Path = `${PATH_SHADCN}/avatar`;
 export const PATH_SHADCN_BADGE: Path = `${PATH_SHADCN}/badge`;
+export const PATH_SHADCN_BREADCRUMB: Path = `${PATH_SHADCN}/breadcrumb`;
+export const PATH_SHADCN_BUTTON: Path = `${PATH_SHADCN}/button`;
+export const PATH_SHADCN_CALENDAR: Path = `${PATH_SHADCN}/calendar`;
+export const PATH_SHADCN_CARD: Path = `${PATH_SHADCN}/card`;
+export const PATH_SHADCN_CHART: Path = `${PATH_SHADCN}/chart`;
 
 export const PATH_OTHER: Path = `${PATH_ROOT}other`;
 export const PATH_OTHER_PARALLEL: Path = `${PATH_OTHER}/parallel_route/sample`;

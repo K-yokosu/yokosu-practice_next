@@ -50,6 +50,11 @@ import {
   PATH_SHADCN_BADGE,
   PATH_SHADCN_ASPECT,
   PATH_SHADCN_AVATAR,
+  PATH_SHADCN_CALENDAR,
+  PATH_SHADCN_CARD,
+  PATH_SHADCN_CHART,
+  PATH_SHADCN_BUTTON,
+  PATH_SHADCN_BREADCRUMB,
  } from "@/lib/paths";
 // 画像
 import { ChevronDown } from "lucide-react"
@@ -116,6 +121,11 @@ export const SHADCN_PATH: string[] = [
   PATH_SHADCN_BADGE,
   PATH_SHADCN_ASPECT,
   PATH_SHADCN_AVATAR,
+  PATH_SHADCN_BREADCRUMB,
+  PATH_SHADCN_CALENDAR,
+  PATH_SHADCN_CARD,
+  PATH_SHADCN_CHART,
+  PATH_SHADCN_BUTTON,
 ].map(path => path.split("/")[URL_SECOND_LAYER]);;
 
 export const OTHER_PATH: string[] = [
@@ -173,6 +183,11 @@ const SIDE_MENU_STRUCTS: SideMenuStructsType = {
       {path: PATH_SHADCN_AVATAR,label: "AVATAR"},
       {path: PATH_SHADCN_ASPECT,label: "ASPECT"},
       {path: PATH_SHADCN_BADGE,label: "BADGE"},
+      {path: PATH_SHADCN_BREADCRUMB,label: "BREADCRUMB"},
+      {path: PATH_SHADCN_BUTTON, label: "Button"},
+      {path: PATH_SHADCN_CALENDAR,label: "Calendar"},
+      {path: PATH_SHADCN_CARD,label: "Card"},
+      {path: PATH_SHADCN_CHART,label: "Chart"}, 
       {path: PATH_SHADCN_INPUT,label: "Input"},
       {path: PATH_SHADCN_INPUT_OTP,label: "Input OTP"},
       {path: PATH_SHADCN_LABEL,label: "Label"},

@@ -6,10 +6,6 @@ import React from "react";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge"
 
-export function BadgeDemo() {
-  return <Badge>Badge</Badge>
-}
-
 export default function Page() {
   return (
     <div className="">

@@ -56,6 +56,16 @@ export const PATH_SHADCN_BUTTON: Path = `${PATH_SHADCN}/button`;
 export const PATH_SHADCN_CALENDAR: Path = `${PATH_SHADCN}/calendar`;
 export const PATH_SHADCN_CARD: Path = `${PATH_SHADCN}/card`;
 export const PATH_SHADCN_CHART: Path = `${PATH_SHADCN}/chart`;
+export const PATH_SHADCN_MENUBAR: Path = `${PATH_SHADCN}/menubar`;
+export const PATH_SHADCN_HOVERCARD: Path = `${PATH_SHADCN}/hover_card`;
+export const PATH_SHADCN_DROPDOWN_MENU: Path = `${PATH_SHADCN}/dropdown_menu`;
+export const PATH_SHADCN_DRAWER: Path = `${PATH_SHADCN}/drawer`;
+export const PATH_SHADCN_DIALOG: Path = `${PATH_SHADCN}/dialog`;
+export const PATH_SHADCN_DATA_TABLE: Path = `${PATH_SHADCN}/data_table`;
+export const PATH_SHADCN_CONTEXT_MENU: Path = `${PATH_SHADCN}/context_menu`;
+export const PATH_SHADCN_COMMAND: Path = `${PATH_SHADCN}/command`;
+export const PATH_SHADCN_COLLAPSIBLE: Path = `${PATH_SHADCN}/collapsible`;
+export const PATH_SHADCN_CAROUSEL: Path = `${PATH_SHADCN}/carousel`;
 
 export const PATH_OTHER: Path = `${PATH_ROOT}other`;
 export const PATH_OTHER_PARALLEL: Path = `${PATH_OTHER}/parallel_route/sample`;

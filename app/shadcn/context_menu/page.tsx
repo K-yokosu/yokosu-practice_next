@@ -22,7 +22,7 @@ import {
   ContextMenuTrigger,
 } from "@/components/ui/context-menu"
 
-export function ContextMenuDemo() {
+function ContextMenuDemo() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed text-sm">

@@ -22,7 +22,7 @@ async function getData(): Promise<Payment[]> {
   ]
 }
 
-export async function DemoPage() {
+async function DemoPage() {
   const data = await getData()
 
   return (

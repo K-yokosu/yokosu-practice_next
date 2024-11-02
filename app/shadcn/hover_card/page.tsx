@@ -17,7 +17,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
 
-export function HoverCardDemo() {
+function HoverCardDemo() {
   return (
     <HoverCard>
       <HoverCardTrigger asChild>

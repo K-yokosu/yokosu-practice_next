@@ -1,8 +1,15 @@
+import { headers } from 'next/headers'
 
+const getDomain = (): string => {
+    const headersData = headers();
+    const host = headersData.get('host');
+    const protocol = headersData.get('x-forwarded-proto') ?? host?.startsWith('localhost') ? 'http' : 'https';
+    const apiBase = `${protocol}://${host}`;
+    return apiBase;
+}
 export async function getTodo(id: number) {
-    // console.log('getTodo dayo');
     const res = await fetch(
-        `${process.env.NEXT_PUBLIC_ORIGIN_URL}/api/todos?id=${id}`,
+        `${getDomain()}/api/todos?id=${id}`,
         {
             method: 'GET', 
             // cache: "no-store"
@@ -15,7 +22,7 @@ export async function getTodo(id: number) {
 
 export async function getTodos() {
     const res = await fetch(
-        `${process.env.NEXT_PUBLIC_ORIGIN_URL}/api/todos`, 
+        `${getDomain()}/api/todos`, 
         {
             method: 'GET', 
             // cache: "no-store"

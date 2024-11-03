@@ -2,7 +2,7 @@
 export async function getTodo(id: number) {
     // console.log('getTodo dayo');
     const res = await fetch(
-        `${process.env.URL}/api/todos?id=${id}`,
+        `${process.env.NEXT_PUBLIC_ORIGIN_URL}/api/todos?id=${id}`,
         {
             method: 'GET', 
             // cache: "no-store"
@@ -15,7 +15,7 @@ export async function getTodo(id: number) {
 
 export async function getTodos() {
     const res = await fetch(
-        `${process.env.URL}/api/todos`, 
+        `${process.env.NEXT_PUBLIC_ORIGIN_URL}/api/todos`, 
         {
             method: 'GET', 
             // cache: "no-store"

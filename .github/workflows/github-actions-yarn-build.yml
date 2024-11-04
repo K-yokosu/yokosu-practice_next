@@ -26,8 +26,12 @@ jobs:
           node-version: "20.x" # Node.jsのバージョンを指定
 
       - name: Build Run
+        env:
+          POSTGRES_PRISMA_URL: ${{ secrets.POSTGRES_PRISMA_URL }}
         run: |
           yarn install
+          yarn add prisma
+          yarn run prisma generate
           yarn run build
 
       - name: Report build success

@@ -28,6 +28,8 @@ jobs:
       - name: Build Run
         run: |
           yarn install
+          yarn add prisma
+          yarn run prisma generate
           yarn run build
 
       - name: Report build success

@@ -11,8 +11,8 @@ export async function GET(req: Request) {
     return todo
   } else{
     const todos: TodoType[] = await prisma.todos.findMany();
-    return NextResponse.json( todos )
-    // return todos
+    // return NextResponse.json( todos )
+    return todos
   }
 }
 

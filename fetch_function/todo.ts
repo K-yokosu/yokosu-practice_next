@@ -1,6 +1,7 @@
 import { getDomain } from "@/lib/serverCommon";
 import { TodoType } from "@/types/todo";
 
+// ここ今使うことないけど練習pjやし一応置いとこか
 export async function getTodo(id: number): Promise<TodoType | null> {
     const res = await fetch(
         `${getDomain()}/api/todos?id=${id}`,

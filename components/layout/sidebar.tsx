@@ -83,7 +83,7 @@ type SideMenuStructType = {
 type SideMenuStructsType = {
   dashboard: SideMenuStructType;
   // segment: SideMenuStructType;
-  // crud: SideMenuStructType;
+  crud: SideMenuStructType;
   shadcn: SideMenuStructType;
   // other: SideMenuStructType;
   sample: SideMenuStructType;
@@ -182,15 +182,15 @@ const SIDE_MENU_STRUCTS: SideMenuStructsType = {
   //     {path: PATH_SEGMENT_ROUTE,label: "route"},
   //   ]
   // },
-  // crud: {
-  //   path: PATH_CRUD,
-  //   label: "crud",
-  //   activeImage: <ChevronDown width={16} height={15} />,
-  //   inactiveImage: <ChevronDown width={16} height={15} />,
-  //   pages: [
-  //     {path: PATH_CRUD_FETCH,label: "Fetch"},
-  //   ]
-  // },
+  crud: {
+    path: PATH_CRUD,
+    label: "crud",
+    activeImage: <ChevronDown width={16} height={15} />,
+    inactiveImage: <ChevronDown width={16} height={15} />,
+    pages: [
+      {path: PATH_CRUD_FETCH,label: "Fetch"},
+    ]
+  },
   shadcn: {
     path: PATH_SHADCN,
     label: "shadcn",
@@ -318,12 +318,13 @@ export const Sidebar = () => {
 
   useEffect(() => {
     const tmpPath = path.split("/")[URL_SECOND_LAYER];
-    // if (CRUD_PATH.includes(tmpPath)) {
-    //   setSidebarMenu({ firstMenu: SIDE_MENU_STRUCTS.crud.path, secondMenu: tmpPath });
-    // } else if (SEGMENT_PATH.includes(tmpPath)) {
+    if (CRUD_PATH.includes(tmpPath)) {
+      setSidebarMenu({ firstMenu: SIDE_MENU_STRUCTS.crud.path, secondMenu: tmpPath });
+    } 
+    // else if (SEGMENT_PATH.includes(tmpPath)) {
     //   setSidebarMenu({ firstMenu: SIDE_MENU_STRUCTS.segment.path, secondMenu: tmpPath });
-    // } else 
-    if (SHADCN_PATH.includes(tmpPath)) {
+    // } 
+    else if (SHADCN_PATH.includes(tmpPath)) {
       setSidebarMenu({ firstMenu: SIDE_MENU_STRUCTS.shadcn.path, secondMenu: tmpPath });
     } 
     // else if (OTHER_PATH.includes(tmpPath)) {
@@ -365,17 +366,17 @@ export const Sidebar = () => {
             //   ),
             //   content: () => SIDE_MENU_STRUCTS.segment.pages && accordionContent(SIDE_MENU_STRUCTS.segment.pages)
             // },
-            // {
-            //   value: SIDE_MENU_STRUCTS.crud.path,
-            //   children: accordionTriger(
-            //     SIDE_MENU_STRUCTS.crud.path,
-            //     SIDE_MENU_STRUCTS.crud.label,
-            //     true,
-            //     SIDE_MENU_STRUCTS.crud.activeImage,
-            //     SIDE_MENU_STRUCTS.crud.inactiveImage
-            //   ),
-            //   content: () => SIDE_MENU_STRUCTS.crud.pages && accordionContent(SIDE_MENU_STRUCTS.crud.pages)
-            // },
+            {
+              value: SIDE_MENU_STRUCTS.crud.path,
+              children: accordionTriger(
+                SIDE_MENU_STRUCTS.crud.path,
+                SIDE_MENU_STRUCTS.crud.label,
+                true,
+                SIDE_MENU_STRUCTS.crud.activeImage,
+                SIDE_MENU_STRUCTS.crud.inactiveImage
+              ),
+              content: () => SIDE_MENU_STRUCTS.crud.pages && accordionContent(SIDE_MENU_STRUCTS.crud.pages)
+            },
             {
               value: SIDE_MENU_STRUCTS.shadcn.path,
               children: accordionTriger(

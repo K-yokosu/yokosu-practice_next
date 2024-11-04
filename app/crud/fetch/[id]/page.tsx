@@ -1,5 +1,5 @@
 import TodoView from "./todoView";
-import { getTodo } from "@/app/request/todo";
+import { getTodo } from "@/request/todo";
 import NotFound from "@/app/not-found";
 
 export default async function Page({ params }: {params: {id: string}}) {

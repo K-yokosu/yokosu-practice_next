@@ -3,6 +3,7 @@
 import { TodoType } from "@/types/todo";
 import { NavigateBtn } from "@/components/NavigateBtn";
 import { useRouter } from "next/navigation";
+import { makePath, PATH_CRUD_FETCH_DETAIL } from "@/lib/paths";
 // import { SampleContainer } from "@/components/modal/container";
 import Link from "next/link";
 // import Image from "next/image";
@@ -10,6 +11,7 @@ import Link from "next/link";
 
 export default function TodoList({todos}: {todos: TodoType[]}){
     const router = useRouter();
+    console.log(makePath(PATH_CRUD_FETCH_DETAIL, [1]));
     return (
         <>
             <h2>Todo Top 画面</h2>
@@ -34,7 +36,7 @@ export default function TodoList({todos}: {todos: TodoType[]}){
                                 <td>{todo.title}</td>
                                 <td>{todo.content}</td>
                                 <td>
-                                    <button onClick={() => router.push(`todo/${todo.id}`)}>詳細</button>
+                                    <button onClick={() => router.push(makePath(PATH_CRUD_FETCH_DETAIL, [todo.id]))}>詳細</button>
                                 </td>
                                 <td>
                                     <button onClick={async() => {

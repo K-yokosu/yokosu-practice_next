@@ -1,19 +1,20 @@
 import { getDomain } from "@/lib/serverCommon";
+import { TodoType } from "@/types/todo";
 
-export async function getTodo(id: number) {
+export async function getTodo(id: number): Promise<TodoType | null> {
     const res = await fetch(
         `${getDomain()}/api/todos?id=${id}`,
         {
             method: 'GET', 
             // cache: "no-store"
-            next: {revalidate: 30}
+            next: {revalidate: 30},
         }
-    );
-    const data = await res.json();
-    return data.todo;
+    ).then(res => res.json());
+    const todo: TodoType | null = res.todo ? {...res.todo} : null;
+    return todo;
 }
 
-export async function getTodos() {
+export async function getTodos(): Promise<TodoType[]> {
     const res = await fetch(
         `${getDomain()}/api/todos`, 
         {
@@ -21,7 +22,7 @@ export async function getTodos() {
             // cache: "no-store"
             next: {revalidate: 30}
         }
-    );
-    const data = await res.json();
-    return data.todos;
+    ).then(res => res.json());
+    const todos: TodoType[] = res.todos;
+    return todos;
 }

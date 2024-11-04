@@ -4,14 +4,14 @@ import { TodoType } from "@/types/todo";
 // export const metadata: Metadata = {
 //   description: "todo view",
 // };
-export async function generateMetadata({ params }: {params: {id: string}}) {
-    const id = Number(params.id);
-    const todo: TodoType = await getTodo(id);
+// export async function generateMetadata({ params }: {params: {id: string}}) {
+//     const id = Number(params.id);
+//     const todo: TodoType = await getTodo(id);
 
-    return {
-        description: `todo view ${todo.title}`
-    };
-}
+//     return {
+//         description: `todo view ${todo.title}`
+//     };
+// }
 
 export default function Layout({
   children,

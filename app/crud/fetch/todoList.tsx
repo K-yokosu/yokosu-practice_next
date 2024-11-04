@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function TodoList({todos}: {todos: TodoType[]}){
     const router = useRouter();
-    console.log(makePath(PATH_CRUD_FETCH_DETAIL, [1]));
+    
     return (
         <>
             <h2>Todo Top 画面</h2>

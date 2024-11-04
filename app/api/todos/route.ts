@@ -1,19 +1,19 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma'
 
-export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url);
-  const id = Number(searchParams.get("id"));
-  if(id){
-    const todo = await prisma.todos.findUnique({ where: { id } });
-    // return NextResponse.json({ todo });
-    return todo
-  } else{
-    const todos = await prisma.todos.findMany();
-    // return NextResponse.json( todos )
-    return todos
-  }
-}
+// export async function GET(req: Request) {
+//   const { searchParams } = new URL(req.url);
+//   const id = Number(searchParams.get("id"));
+//   if(id){
+//     const todo = await prisma.todos.findUnique({ where: { id } });
+//     // return NextResponse.json({ todo });
+//     return todo
+//   } else{
+//     const todos = await prisma.todos.findMany();
+//     // return NextResponse.json( todos )
+//     return todos
+//   }
+// }
 
 export async function POST(request: Request) {
   const req = await request.json();
@@ -55,9 +55,4 @@ export async function DELETE(request: Request) {
     }
   });
   return NextResponse.json({ todo });
-}
-
-async function getAllTodos() {
-  const todos = await prisma.todos.findMany();
-  return NextResponse.json({ todos })
 }

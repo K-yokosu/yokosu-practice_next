@@ -1,16 +1,15 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma'
-import { TodoType } from "@/types/todo";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const id = Number(searchParams.get("id"));
   if(id){
-    const todo: TodoType | null = await prisma.todos.findUnique({ where: { id } });
+    const todo = await prisma.todos.findUnique({ where: { id } });
     // return NextResponse.json({ todo });
     return todo
   } else{
-    const todos: TodoType[] = await prisma.todos.findMany();
+    const todos = await prisma.todos.findMany();
     // return NextResponse.json( todos )
     return todos
   }

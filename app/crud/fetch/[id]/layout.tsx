@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTodo } from "@/fetch_function/todo";
+// import { getTodo } from "@/fetch_function/todo";
 import { TodoType } from "@/types/todo";
 // export const metadata: Metadata = {
 //   description: "todo view",

@@ -1,0 +1,28 @@
+# ディレクトリ内のすべてのファイルを無視：
+
+
+# すべての Markdown ファイルを無視：README.mdなど
+*.md
+
+# .で始まるすべてのファイルを無視：
+.*
+
+# 現在のディレクトリとそのサブディレクトリに存在する全ての .xxx を無視：
+**/.git
+**/.svg
+**/node_modules
+
+# JSONファイルを無視：
+package.json
+package-lock.json
+component.json
+.eslintrc.json
+
+# 設定ファイルを無視：
+yarn.lock
+.yarnrc.yml
+tailwind.config.ts
+tsconfig.json
+postcss.config.mjs
+next.config.js
+.env.example

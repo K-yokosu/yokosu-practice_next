@@ -1,5 +1,3 @@
 export default function Page() {
-  return (
-      <div>shadcn top</div>
-  )
+    return <div>shadcn top</div>;
 }

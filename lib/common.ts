@@ -1,11 +1,11 @@
 import { ChangeEvent } from "react";
 
 export const changeInputHandler = <T>(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>, name: keyof T, values: T, setValues: React.Dispatch<React.SetStateAction<T>>) => {
-  let target = e.target;
-  if (target) {
-    let value = target.value;
-    setValues({ ...values, [name]: value });
-  }
+    let target = e.target;
+    if (target) {
+        let value = target.value;
+        setValues({ ...values, [name]: value });
+    }
 };
 
 /**
@@ -16,8 +16,8 @@ export const changeInputHandler = <T>(e: ChangeEvent<HTMLInputElement | HTMLSele
  * @returns 変換されたオブジェクト配列
  */
 export function convertKey<T extends object>(array: T[], fromKey: keyof T, toKey: string): any[] {
-  return array.map(item => {
-    const { [fromKey]: value, ...rest } = item;
-    return { ...rest, [toKey]: value };
-  });
+    return array.map(item => {
+        const { [fromKey]: value, ...rest } = item;
+        return { ...rest, [toKey]: value };
+    });
 }

@@ -4,4 +4,4 @@ export type TodoType = {
     content: string;
     createdAt: Date;
     updatedAt: Date;
-}
+};

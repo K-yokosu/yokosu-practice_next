@@ -6,7 +6,7 @@
 //     const res = await fetch(
 //         `${getDomain()}/api/todos?id=${id}`,
 //         {
-//             method: 'GET', 
+//             method: 'GET',
 //             // cache: "no-store"
 //             next: {revalidate: 30},
 //         }
@@ -17,9 +17,9 @@
 
 // export async function getTodos(): Promise<TodoType[]> {
 //     const res = await fetch(
-//         `${getDomain()}/api/todos`, 
+//         `${getDomain()}/api/todos`,
 //         {
-//             method: 'GET', 
+//             method: 'GET',
 //             // cache: "no-store"
 //             next: {revalidate: 30}
 //         }

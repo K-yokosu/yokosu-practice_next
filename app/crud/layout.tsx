@@ -2,16 +2,14 @@ import type { Metadata } from "next";
 // import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "todo",
-  description: "todo",
+    title: "todo",
+    description: "todo"
 };
 
 export default function Layout({
-  children,
+    children
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <div className="p-4">{children}</div>
-  );
+    return <div className="p-4">{children}</div>;
 }

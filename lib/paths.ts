@@ -97,7 +97,6 @@ export const PATH_API_FILE_ITEM_CREATE: Path = "/api/file_item";
 export const PATH_API_FILE_ITEM_UPDATE: Path = "/api/file_item/%s";
 export const PATH_API_FILE_ITEM_DELETE: Path = "/api/file_item/%s";
 
-
 // --------- パス生成関数 ----------- //
 // パスパラメータに埋め込む文字列数値は%sの順にargs配列で設定する
 // 例: /api/clinic/%s/%s -> args = [101, 202] -> /api/clinic/101/202
@@ -107,22 +106,22 @@ export const PATH_API_FILE_ITEM_DELETE: Path = "/api/file_item/%s";
 
 type QueryArgs = Record<string, string>;
 export const makePath = (path: Path, args: (string | number)[] = [], queryArgs: QueryArgs | undefined = undefined, hash: string | undefined = undefined): string => {
-  const stringArgs = args.map(arg => (typeof arg === "number" ? arg.toString() : arg));
-  const s = sprintf(path, ...stringArgs);
+    const stringArgs = args.map(arg => (typeof arg === "number" ? arg.toString() : arg));
+    const s = sprintf(path, ...stringArgs);
 
-  if (typeof queryArgs === "undefined" && typeof hash === "undefined") {
-    return s;
-  }
+    if (typeof queryArgs === "undefined" && typeof hash === "undefined") {
+        return s;
+    }
 
-  if (typeof queryArgs === "undefined" && typeof hash !== "undefined") {
-    return `${s}#${hash}`;
-  }
+    if (typeof queryArgs === "undefined" && typeof hash !== "undefined") {
+        return `${s}#${hash}`;
+    }
 
-  const params = new URLSearchParams(queryArgs);
+    const params = new URLSearchParams(queryArgs);
 
-  if (typeof hash === "undefined") {
-    return `${s}?${params.toString()}`;
-  }
+    if (typeof hash === "undefined") {
+        return `${s}?${params.toString()}`;
+    }
 
-  return `${s}?${params.toString()}#${hash}`;
+    return `${s}?${params.toString()}#${hash}`;
 };

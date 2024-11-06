@@ -1,5 +1,3 @@
 export default function Page() {
-  return (
-      <div>crud top</div>
-  )
+    return <div>crud top</div>;
 }

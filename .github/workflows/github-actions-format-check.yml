@@ -1,0 +1,35 @@
+name: Format Check
+run-name: Format Check
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+      - 'feature/*'
+    # 処理が走るタイミングはプルリク作成時、追加のコミットPush、閉じたプルリクの再開
+    types: [opened, synchronize, reopened]
+env:
+  FILE_PATTERN: "./**/*.{ts,tsx,js,jsx}"
+permissions:
+  contents: read
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 # リポジトリのコードをチェックアウト
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x" # Node.jsのバージョンを指定
+
+      - name: Check Run
+        run: |
+          yarn install
+          yarn prettier --check .
+
+      - name: Report Prettier errors
+        if: failure() # Prettier checkでエラーが発生した場合のみ実行
+        run: echo "Prettier found issues with the code formatting."

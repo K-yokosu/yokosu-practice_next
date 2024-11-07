@@ -22,10 +22,12 @@ export default function TodoView({ todo }: { todo: TodoType }) {
 
     return (
         <div>
-            view
-            <button onClick={() => setIsEdit(prev => !prev)} className="border bg-blue-400 text-white rounded-lg p-2">
-                {isEdit ? "詳細へ切替" : "編集へ切替"}
-            </button>
+            <h1 className="text-3xl font-bold">Todo 詳細</h1>
+            <div className="flex justify-end items-center my-4">
+                <button onClick={() => setIsEdit(prev => !prev)} className="border bg-blue-400 text-white rounded-lg p-2">
+                    {isEdit ? "詳細へ切替" : "編集へ切替"}
+                </button>
+            </div>
             {!isEdit ? (
                 <div>
                     <div>title: {todo.title}</div>

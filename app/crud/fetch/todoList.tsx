@@ -4,26 +4,41 @@ import { TodoType } from "@/types/todo";
 import { NavigateBtn } from "@/components/NavigateBtn";
 import { useRouter } from "next/navigation";
 import { makePath, PATH_CRUD_FETCH_DETAIL } from "@/lib/paths";
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 // import { SampleContainer } from "@/components/modal/container";
 import Link from "next/link";
-// import Image from "next/image";
-// import dummy from "@/public/dummy1.png"
 
 export default function TodoList({ todos }: { todos: TodoType[] }) {
     const router = useRouter();
 
     return (
         <>
-            <h2>Todo Top 画面</h2>
-            {/* <Image
-                src={dummy}
-                alt="aaa"
-                width={100}
-                height={100}
-            /> */}
-            <NavigateBtn url="/crud/fetch/create" />
+            <h1 className="text-3xl font-bold">Todo Top</h1>
+            <div className="flex justify-end items-center my-4">
+                <NavigateBtn url="/crud/fetch/create" />
+            </div>
 
-            <table>
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead>ID</TableHead>
+                        <TableHead>title</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    {todos.map(todo => (
+                        <TableRow key={todo.id}>
+                            <TableCell className="font-medium">
+                                <Link className="hover:underline" href={makePath(PATH_CRUD_FETCH_DETAIL, [todo.id])}>
+                                    {todo.id}
+                                </Link>
+                            </TableCell>
+                            <TableCell>{todo.title}</TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+            {/* <table>
                 <thead>
                     <tr>
                         <th>タイトル</th>
@@ -60,7 +75,7 @@ export default function TodoList({ todos }: { todos: TodoType[] }) {
                             );
                         })}
                 </tbody>
-            </table>
+            </table> */}
         </>
     );
 }

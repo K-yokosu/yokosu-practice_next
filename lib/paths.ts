@@ -22,6 +22,7 @@ export const PATH_SEGMENT_ROUTE: Path = `${PATH_SEGMENT}/route`;
 export const PATH_CRUD: Path = `${PATH_ROOT}crud`;
 export const PATH_CRUD_FETCH: Path = `${PATH_CRUD}/fetch`;
 export const PATH_CRUD_FETCH_DETAIL: Path = `${PATH_CRUD}/fetch/%s`;
+export const PATH_CRUD_FETCH_EDIT: Path = `${PATH_CRUD}/fetch/%s/edit`;
 
 export const PATH_SHADCN: Path = `${PATH_ROOT}shadcn`;
 export const PATH_SHADCN_ACCORDION: Path = `${PATH_SHADCN}/accordion`;

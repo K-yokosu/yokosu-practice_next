@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import HeaderSidebar from "@/components/layout/header_sidebar";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
+import LoadingIndicator from "@/components/loading";
 
 export const metadata = {
     metadataBase: new URL("https://postgres-prisma.vercel.app"),
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <HeaderSidebar>{children}</HeaderSidebar>
                 <Toaster />
                 <SonnerToaster />
+                <LoadingIndicator />
             </body>
         </html>
     );

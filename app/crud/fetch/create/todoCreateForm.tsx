@@ -32,7 +32,7 @@ export default function TodoCreateForm() {
             content: ""
         }
     });
-    const { control, handleSubmit, watch } = form;
+    const { control, handleSubmit } = form;
 
     const onSubmit = async (values: z.infer<typeof TodoSchema>) => {
         setLoading(true);

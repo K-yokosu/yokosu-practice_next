@@ -13,6 +13,7 @@ import Link from "next/link";
 import { makePath, PATH_CRUD_FETCH_EDIT } from "@/lib/paths";
 import { ScreenType } from "@/const/common";
 import { TodoType } from "@/types/todo";
+import { updateTodo } from "@/app/crud/actions/todoActions";
 
 const MAX_STR_LENGTH: number = 10000;
 export const TodoSchema = z.object({
@@ -38,25 +39,12 @@ export default function TodoClient({ todo, screenType }: { todo: TodoType; scree
             content: todo.content
         }
     });
-    const { control, handleSubmit, setError, watch } = form;
-    const formData = watch();
+    const { control, handleSubmit } = form;
 
     const onSubmit = async (values: z.infer<typeof TodoSchema>) => {
         setLoading(true);
-        const formData = {
-            ...values
-        };
         try {
-            const res = await fetch("/_api/todos", {
-                method: "PATCH",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData)
-            });
-
-            if (res.status >= 400) {
-                throw new Error(`${res.status} \n ${res.statusText}`);
-                console.log(res);
-            }
+            await updateTodo(values.id, values);
             router.push("/crud/fetch");
             router.refresh();
         } catch (error) {

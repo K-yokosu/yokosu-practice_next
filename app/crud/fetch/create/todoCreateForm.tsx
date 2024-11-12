@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { FormInput } from "@/components/shadcn_components/hook-form/form_input";
 import { FormTextarea } from "@/components/shadcn_components/hook-form/textare";
+import { createTodo } from "@/app/crud/actions/todoActions";
 
 const MAX_STR_LENGTH: number = 10000;
 export const TodoSchema = z.object({
@@ -31,25 +32,12 @@ export default function TodoCreateForm() {
             content: ""
         }
     });
-    const { control, handleSubmit, setError, watch } = form;
-    const formData = watch();
+    const { control, handleSubmit } = form;
 
     const onSubmit = async (values: z.infer<typeof TodoSchema>) => {
         setLoading(true);
-        const formData = {
-            ...values
-        };
         try {
-            const res = await fetch("/_api/todos", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData)
-            });
-
-            if (res.status >= 400) {
-                throw new Error(`${res.status} \n ${res.statusText}`);
-                console.log(res);
-            }
+            await createTodo(values);
             router.push("/crud/fetch");
             router.refresh();
         } catch (error) {

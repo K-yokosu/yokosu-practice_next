@@ -6,10 +6,29 @@ import { useRouter } from "next/navigation";
 import { makePath, PATH_CRUD_FETCH_DETAIL } from "@/lib/paths";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 // import { SampleContainer } from "@/components/modal/container";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import redTrash from "@/public/images/trash_red.svg";
 import Link from "next/link";
+import { deleteTodo } from "@/app/crud/actions/todoActions";
+import useLoadingStore from "@/stores/useLoadingStore";
 
 export default function TodoList({ todos }: { todos: TodoType[] }) {
     const router = useRouter();
+    const { setLoading } = useLoadingStore();
+
+    const handleDelete = async (id: number) => {
+        setLoading(true);
+        try {
+            await deleteTodo(id);
+            router.push("/crud/fetch");
+            router.refresh();
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <>
@@ -23,6 +42,7 @@ export default function TodoList({ todos }: { todos: TodoType[] }) {
                     <TableRow>
                         <TableHead>ID</TableHead>
                         <TableHead>title</TableHead>
+                        <TableHead>削除</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -34,48 +54,15 @@ export default function TodoList({ todos }: { todos: TodoType[] }) {
                                 </Link>
                             </TableCell>
                             <TableCell>{todo.title}</TableCell>
+                            <TableCell>
+                                <Button onClick={() => handleDelete(todo.id)} variant={"ghost"} type="button">
+                                    <Image src={redTrash} width={18} height={22} alt="redTrash" className="cursor-pointer" />
+                                </Button>
+                            </TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
             </Table>
-            {/* <table>
-                <thead>
-                    <tr>
-                        <th>タイトル</th>
-                        <th>詳細</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {todos.length > 0 &&
-                        todos.map(todo => {
-                            return (
-                                <tr key={todo.id}>
-                                    <td>{todo.title}</td>
-                                    <td>{todo.content}</td>
-                                    <td>
-                                        <button onClick={() => router.push(makePath(PATH_CRUD_FETCH_DETAIL, [todo.id]))}>詳細</button>
-                                    </td>
-                                    <td>
-                                        <button
-                                            onClick={async () => {
-                                                const res = await fetch("/api/todos", {
-                                                    method: "DELETE",
-                                                    headers: { "Content-Type": "application/json" },
-                                                    body: JSON.stringify({ id: todo.id })
-                                                });
-                                                console.log(res);
-                                                //   router.push("/todo");
-                                                //   router.refresh();
-                                            }}
-                                        >
-                                            削除
-                                        </button>
-                                    </td>
-                                </tr>
-                            );
-                        })}
-                </tbody>
-            </table> */}
         </>
     );
 }

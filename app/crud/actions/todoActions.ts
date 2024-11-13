@@ -33,3 +33,15 @@ export async function updateTodo(id: number, data: { title?: string; content?: s
         throw new Error("タスクの更新に失敗しました");
     }
 }
+
+export async function deleteTodo(id: number) {
+    try {
+        const updatedTodo = await prisma.todos.delete({
+            where: { id }
+        });
+        return updatedTodo;
+    } catch (error) {
+        console.error("Error delete todo:", error);
+        throw new Error("タスクの削除に失敗しました");
+    }
+}

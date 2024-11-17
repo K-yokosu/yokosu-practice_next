@@ -13,7 +13,7 @@ import Link from "next/link";
 import { makePath, PATH_CRUD_FETCH_EDIT } from "@/lib/paths";
 import { ScreenType } from "@/const/common";
 import { TodoType } from "@/types/todo";
-import { updateTodo } from "@/app/crud/actions/todoActions";
+import { updateTodo } from "@/app/(auth)/crud/actions/todoActions";
 
 const MAX_STR_LENGTH: number = 10000;
 export const TodoSchema = z.object({

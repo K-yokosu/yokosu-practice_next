@@ -1,8 +1,5 @@
-import "./globals.css";
 import { Inter } from "next/font/google";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as SonnerToaster } from "@/components/ui/sonner";
-import LoadingIndicator from "@/components/loading";
+import HeaderSidebar from "@/components/layout/header_sidebar";
 
 export const metadata = {
     metadataBase: new URL("https://postgres-prisma.vercel.app"),
@@ -24,10 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body className={inter.variable}>
-                {children}
-                <Toaster />
-                <SonnerToaster />
-                <LoadingIndicator />
+                <HeaderSidebar>{children}</HeaderSidebar>
             </body>
         </html>
     );

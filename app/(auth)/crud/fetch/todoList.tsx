@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import redTrash from "@/public/images/trash_red.svg";
 import Link from "next/link";
-import { deleteTodo } from "@/app/crud/actions/todoActions";
+import { deleteTodo } from "@/app/(auth)/crud/actions/todoActions";
 import useLoadingStore from "@/stores/useLoadingStore";
 
 export default function TodoList({ todos }: { todos: TodoType[] }) {

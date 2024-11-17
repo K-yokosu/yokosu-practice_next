@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { FormInput } from "@/components/shadcn_components/hook-form/form_input";
 import { FormTextarea } from "@/components/shadcn_components/hook-form/textare";
-import { createTodo } from "@/app/crud/actions/todoActions";
+import { createTodo } from "@/app/(auth)/crud/actions/todoActions";
 
 const MAX_STR_LENGTH: number = 10000;
 export const TodoSchema = z.object({

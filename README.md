@@ -1,5 +1,5 @@
-# Next/React の練習をテーマ毎にプロジェクトを分けて上げていく
+# Next/React の練習用プロジェクト
 
-## shadcn
-
-shadcn/uiのコンポーネントを試していくプロジェクト
+- shadcn
+- server action
+- drag and drop

@@ -98,12 +98,7 @@ const URL_SECOND_LAYER: number = 2;
 // --------- group パス一覧 ----------- //
 export const SEGMENT_PATH: string[] = [PATH_SEGMENT_LOAD, PATH_SEGMENT_NOTFOUND, PATH_SEGMENT_ROUTE].map(path => path.split("/")[URL_SECOND_LAYER]);
 
-export const CRUD_PATH: string[] = [
-    PATH_CRUD_FETCH,
-    PATH_CRUD_SSR,
-    PATH_CRUD_SSG,
-    PATH_CRUD_ISR,
-].map(path => path.split("/")[URL_SECOND_LAYER]);
+export const CRUD_PATH: string[] = [PATH_CRUD_FETCH, PATH_CRUD_SSR, PATH_CRUD_SSG, PATH_CRUD_ISR].map(path => path.split("/")[URL_SECOND_LAYER]);
 
 export const SHADCN_PATH: string[] = [
     PATH_SHADCN_ACCORDION,

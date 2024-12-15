@@ -177,7 +177,7 @@ const SIDE_MENU_STRUCTS: SideMenuStructsType = {
         pages: [
             { path: PATH_CRUD_FETCH, label: "Fetch" },
             { path: PATH_CRUD_SSR, label: "SSR" },
-            { path: PATH_CRUD_SSG, label: "SSR" },
+            { path: PATH_CRUD_SSG, label: "SSG" },
             { path: PATH_CRUD_ISR, label: "ISR" }
         ]
     },

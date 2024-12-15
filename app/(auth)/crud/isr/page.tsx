@@ -9,21 +9,16 @@ type TodoType = {
 };
 
 const getTodos = cache(async (): Promise<TodoType[]> => {
-    console.log("get todos ssr");
-    const todos = await fetch("https://jsonplaceholder.typicode.com/todos", { cache: "no-store" });
+    console.log("get todos isr");
+    const todos = await fetch("https://jsonplaceholder.typicode.com/todos", { next: { revalidate: 10 } });
     return todos.json();
 });
 
 export default async function Page() {
     const todos: TodoType[] = await getTodos();
-
-    // Request Memorization 確認用コード
-    // getTodos()のcache外せば毎回リクエストが飛ぶ
-    // const todoB: TodoType[] = await getTodos();
-    // const todoC: TodoType[] = await getTodos();
     return (
         <div>
-            <h1>SSR Page</h1>
+            <h1>ISR Page</h1>
             <Table>
                 <TableHeader>
                     <TableRow>

@@ -23,6 +23,9 @@ export const PATH_CRUD: Path = `${PATH_ROOT}crud`;
 export const PATH_CRUD_FETCH: Path = `${PATH_CRUD}/fetch`;
 export const PATH_CRUD_FETCH_DETAIL: Path = `${PATH_CRUD}/fetch/%s`;
 export const PATH_CRUD_FETCH_EDIT: Path = `${PATH_CRUD}/fetch/%s/edit`;
+export const PATH_CRUD_SSR: Path = `${PATH_CRUD}/ssr`;
+export const PATH_CRUD_SSG: Path = `${PATH_CRUD}/ssg`;
+export const PATH_CRUD_ISR: Path = `${PATH_CRUD}/isr`;
 
 export const PATH_SHADCN: Path = `${PATH_ROOT}shadcn`;
 export const PATH_SHADCN_ACCORDION: Path = `${PATH_SHADCN}/accordion`;

@@ -13,6 +13,9 @@ import {
     PATH_SEGMENT_ROUTE,
     PATH_CRUD,
     PATH_CRUD_FETCH,
+    PATH_CRUD_SSR,
+    PATH_CRUD_SSG,
+    PATH_CRUD_ISR,
     PATH_SHADCN,
     PATH_SHADCN_ACCORDION,
     PATH_SHADCN_TOGGLE,
@@ -95,7 +98,12 @@ const URL_SECOND_LAYER: number = 2;
 // --------- group パス一覧 ----------- //
 export const SEGMENT_PATH: string[] = [PATH_SEGMENT_LOAD, PATH_SEGMENT_NOTFOUND, PATH_SEGMENT_ROUTE].map(path => path.split("/")[URL_SECOND_LAYER]);
 
-export const CRUD_PATH: string[] = [PATH_CRUD_FETCH].map(path => path.split("/")[URL_SECOND_LAYER]);
+export const CRUD_PATH: string[] = [
+    PATH_CRUD_FETCH,
+    PATH_CRUD_SSR,
+    PATH_CRUD_SSG,
+    PATH_CRUD_ISR,
+].map(path => path.split("/")[URL_SECOND_LAYER]);
 
 export const SHADCN_PATH: string[] = [
     PATH_SHADCN_ACCORDION,
@@ -171,7 +179,12 @@ const SIDE_MENU_STRUCTS: SideMenuStructsType = {
         label: "crud",
         activeImage: <ChevronDown width={16} height={15} />,
         inactiveImage: <ChevronDown width={16} height={15} />,
-        pages: [{ path: PATH_CRUD_FETCH, label: "Fetch" }]
+        pages: [
+            { path: PATH_CRUD_FETCH, label: "Fetch" },
+            { path: PATH_CRUD_SSR, label: "SSR" },
+            { path: PATH_CRUD_SSG, label: "SSR" },
+            { path: PATH_CRUD_ISR, label: "ISR" }
+        ]
     },
     shadcn: {
         path: PATH_SHADCN,
